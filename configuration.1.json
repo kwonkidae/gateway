@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "extra_config": {
+    "github_com/devopsfaith/krakend-gologging": {
+      "level": "ERROR",
+      "prefix": "[KRAKEND]",
+      "syslog": false,
+      "stdout": true
+    },
+    "krakendesigner": {
+      "endpoint_defaults": {
+        "github.com/devopsfaith/krakend-ratelimit/juju/router": {
+          "maxRate": 0,
+          "clientMaxRate": 0
+        }
+      }
+    },
+    "github_com/devopsfaith/krakend-cors": {
+      "allow_origins": [ "http://www.lvh.me:9000" ],
+      "allow_methods": [ "POST", "GET", "DELETE", "PUT", "OPTIONS"],
+      "allow_headers": [ "X-Requested-With", "X-HTTP-Method-Override", "Content-Type", "Accept"],
+      "allow_credentials": true
+    }    
+  },
+  "read_timeout": "0s",
+  "write_timeout": "0s",
+  "idle_timeout": "0s",
+  "read_header_timeout": "0s",
+  "timeout": "60000ms",
+  "name": "hello",
+  "disable_rest": true,
+  "endpoints": [
+    {
+      "endpoint": "/lawtalk/*params",
+      "method": "GET",
+      "header_to_pass": [ "Cookie" ],
+      "output_encoding": "no-op",
+      "backend": [{
+        "host": [
+          "http://127.0.0.1:9000"
+        ],
+        "encoding": "no-op",
+        "url_pattern": "{{.Params}}"
+      }],
+      "concurrent_calls": 1,
+      "querystring_params": [
+        "kkdosk"
+      ]
+    },
+    {
+      "endpoint": "/lawtalk/*params",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [{
+        "host": [
+          "http://127.0.0.1:9000"
+        ],
+        "encoding": "no-op",
+        "url_pattern": "{{.Params}}"
+      }],
+      "concurrent_calls": 1
+    },
+    {
+      "endpoint": "/lawtalk/*params",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "backend": [{
+        "host": [
+          "http://127.0.0.1:9000"
+        ],
+        "encoding": "no-op",
+        "url_pattern": "{{.Params}}"
+      }],
+      "concurrent_calls": 1
+    },    {
+      "endpoint": "/lawtalk/*params",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "backend": [{
+        "host": [
+          "http://127.0.0.1:9000"
+        ],
+        "encoding": "no-op",
+        "url_pattern": "{{.Params}}"
+      }],
+      "concurrent_calls": 1
+    }
+  ]
+}

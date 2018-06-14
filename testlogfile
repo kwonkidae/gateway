@@ -1,0 +1,39 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[KRAKEND] DEBUG: Debug enabled
+[GIN-debug] GET    /__debug/*param           --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.DebugHandler.func1 (4 handlers)
+[GIN-debug] POST   /__debug/*param           --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.DebugHandler.func1 (4 handlers)
+[GIN-debug] PUT    /__debug/*param           --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.DebugHandler.func1 (4 handlers)
+[GIN-debug] GET    /lawtalk/*params          --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.CustomErrorEndpointHandler.func1 (4 handlers)
+[GIN-debug] POST   /lawtalk/*params          --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.CustomErrorEndpointHandler.func1 (4 handlers)
+[GIN-debug] PUT    /lawtalk/*params          --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.CustomErrorEndpointHandler.func1 (4 handlers)
+[GIN-debug] DELETE /lawtalk/*params          --> github.com/gate/vendor/github.com/devopsfaith/krakend/router/gin.CustomErrorEndpointHandler.func1 (4 handlers)
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/user/bookmark-lawyers] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/user/questions] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/user/favorites/question] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/user/useful/answer] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 22.748918ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 26.913218ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 40.458581ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 63.72499ms
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/statistics/admin/dashboardchart/user/thirty] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/statistics/admin/dashboardchart/lawyer/thirty] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/statistics/admin/dashboardchart/qna/thirty] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[]  {} map[Params:/api/statistics/admin/dashboard] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 12.717824ms
+[KRAKEND] INFO: /lawtalk/*params Calling backend
+[KRAKEND] DEBUG: Request &{GET <nil> map[page:[1]]  {} map[Params:/api/statistics/profile-edit-history] map[X-Forwarded-For:[127.0.0.1] User-Agent:[KrakenD Version undefined]] [_ga=GA1.1.1851670771.1514940485 csrftoken=G6Xkax0o9SYD27VwwKpAkfarHyb0UaGImawPsEUNcdd2xO3Cd7wAdowFNEHota84 csrf_token=f8kZMEbtSDPg+Tn2vv8uGkpjRKRIPGTJVGd2copxESU= connect.sid=s%3Akg83XcFSmIZING0IFaGd_o2WwSeF6qLU.WOf%2FcwFD2lpwaJ0bBACAMm3dsrmk%2F4okbu3N8wpfhjE _gid=GA1.1.552601944.1528897848 wcs_bt=140417eef90a434:1528897849]}
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 88.435575ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 117.233723ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 253.295189ms
+[KRAKEND] INFO: /lawtalk/*params Call to backend took 5.005934697s
