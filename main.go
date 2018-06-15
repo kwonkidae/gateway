@@ -14,7 +14,6 @@ import (
 	"github.com/devopsfaith/krakend/router"
 	krakendgin "github.com/devopsfaith/krakend/router/gin"
 	jwt_lib "github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/contrib/jwt"
 	"github.com/gin-gonic/gin"
 	cors "gopkg.in/gin-contrib/cors.v1"
 )
@@ -50,7 +49,11 @@ func main() {
 
 	mws := []gin.HandlerFunc{
 		makeCors(serviceConfig.ExtraConfig),
-		jwt.Auth("lawtalkSecret"),
+		func(c *gin.Context) {
+			// if c.Request.URL.Path == "/lawtalk/api/qna/question/alltypecount" {
+			// 	jwt.Auth("lawtalkSecret")(c)
+			// }
+		},
 	}
 
 	// routerFactory := krakendgin.DefaultFactory(proxy.DefaultFactory(logger), logger)
