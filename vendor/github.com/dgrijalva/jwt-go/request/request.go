@@ -1,8 +1,10 @@
 package request
 
 import (
-	"github.com/dgrijalva/jwt-go"
+	"fmt"
 	"net/http"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 // Extract and parse a JWT token from an HTTP request.
@@ -13,7 +15,9 @@ import (
 // You can provide options to modify parsing behavior
 func ParseFromRequest(req *http.Request, extractor Extractor, keyFunc jwt.Keyfunc, options ...ParseFromRequestOption) (token *jwt.Token, err error) {
 	// Create basic parser struct
+	fmt.Println(extractor)
 	p := &fromRequestParser{req, extractor, nil, nil}
+	fmt.Println(extractor)
 
 	// Handle options
 	for _, option := range options {
