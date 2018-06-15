@@ -2,10 +2,10 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
-
-	"github.com/gin-gonic/gin"
+	"time"
 
 	krakendcors "github.com/devopsfaith/krakend-cors"
 	"github.com/devopsfaith/krakend/config"
@@ -13,6 +13,9 @@ import (
 	"github.com/devopsfaith/krakend/proxy"
 	"github.com/devopsfaith/krakend/router"
 	krakendgin "github.com/devopsfaith/krakend/router/gin"
+	jwt_lib "github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/contrib/jwt"
+	"github.com/gin-gonic/gin"
 	cors "gopkg.in/gin-contrib/cors.v1"
 )
 
@@ -32,6 +35,8 @@ func main() {
 	if *port != 0 {
 		serviceConfig.Port = *port
 	}
+
+	go runJWTGeneratorHTTPService("/token", "lawtalkSecret", "lawtalkAdmin", time.Hour*10, 7002)
 	// f, err := os.OpenFile("testlogfile", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	// if err != nil {
 	// 	log.Fatalf("error opening file: %v", err)
@@ -45,6 +50,7 @@ func main() {
 
 	mws := []gin.HandlerFunc{
 		makeCors(serviceConfig.ExtraConfig),
+		jwt.Auth("lawtalkSecret"),
 	}
 
 	// routerFactory := krakendgin.DefaultFactory(proxy.DefaultFactory(logger), logger)
@@ -95,4 +101,22 @@ func makeCors(e config.ExtraConfig) gin.HandlerFunc {
 		AllowCredentials: cfg.AllowCredentials,
 		MaxAge:           cfg.MaxAge,
 	})
+}
+
+func runJWTGeneratorHTTPService(resource, jwtSecret, jwtIssuer string, jwsTTL time.Duration, jwtPort int) {
+	engine := gin.Default()
+	engine.GET(fmt.Sprintf("%s/:id", resource), func(c *gin.Context) {
+		token := jwt_lib.New(jwt_lib.GetSigningMethod("HS256"))
+		token.Claims = jwt_lib.MapClaims{
+			"Id":  c.Param("id"),
+			"iss": jwtIssuer,
+			"exp": time.Now().Add(jwsTTL).Unix(),
+		}
+		tokenString, err := token.SignedString([]byte(jwtSecret))
+		if err != nil {
+			c.JSON(500, gin.H{"message": "Could not generate token"})
+		}
+		c.JSON(200, gin.H{"token": tokenString})
+	})
+	log.Fatal(engine.Run(fmt.Sprintf(":%d", jwtPort)))
 }

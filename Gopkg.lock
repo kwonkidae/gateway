@@ -25,10 +25,25 @@
   revision = "5f9ad9212b9c177ddb59f738fe9b29d2b07c652b"
 
 [[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = [
+    ".",
+    "request"
+  ]
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
   revision = "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gin-gonic/contrib"
+  packages = ["jwt"]
+  revision = "39cfb9727134fef3120d2458fce5fab14265a46c"
 
 [[projects]]
   name = "github.com/gin-gonic/gin"
@@ -85,6 +100,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f0abd302555597a85e9a754da70d00427c51a4e011d313de1fff7811bc781a0c"
+  inputs-digest = "909e701d78c2a3f72371cf294f1efd6604b52a58ebbecbd4ba3043cc85ef31b4"
   solver-name = "gps-cdcl"
   solver-version = 1

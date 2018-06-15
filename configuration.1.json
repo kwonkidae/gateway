@@ -33,7 +33,6 @@
     {
       "endpoint": "/lawtalk/*params",
       "method": "GET",
-      "header_to_pass": [ "Cookie" ],
       "output_encoding": "no-op",
       "backend": [{
         "host": [
@@ -72,7 +71,7 @@
         "url_pattern": "{{.Params}}"
       }],
       "concurrent_calls": 1
-    },    {
+    }, {
       "endpoint": "/lawtalk/*params",
       "method": "DELETE",
       "output_encoding": "no-op",
